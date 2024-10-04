@@ -34,11 +34,11 @@ export default function AccountMenu() {
                   <Avatar src={''} alt="profile"/>
                 </IconButton>
             </Tooltip>
-            <div className="flex flex-col items-start leading-5">
+            <div className="hidden xl:flex flex-col items-start leading-4">
                 <p className='dark:text-lightGray'>John Doe</p>
                 <p className='text-primary'><strong>Admin</strong></p>
             </div>
-            <Tooltip title="Account settings">
+            <Tooltip title="Account settings" className="hidden xl:block">
                 <IconButton
                     onClick={handleClick}
                     size="small"
