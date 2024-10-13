@@ -20,6 +20,7 @@ model Corper {
   state_code         String       @unique
   state          String?
   ppa            String?
+  cds             String?
   phone_number          String?        @unique
   created_at     DateTime       @default(now())
   updated_at     DateTime       @updatedAt
