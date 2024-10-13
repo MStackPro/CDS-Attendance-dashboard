@@ -7,6 +7,16 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Avatar } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 export default function AntiCorruption() {
   const [ corpers, setCorpers ] = useState([])
@@ -41,7 +51,38 @@ export default function AntiCorruption() {
         <div className='flex items-center justify-between'>
           <Input type="date" className=""/>
           <div>
-            <Button>Add New</Button>
+          <AlertDialog>
+            <AlertDialogTrigger className='bg-[#13c55a] text-white py-2 px-5 rounded-md'>Add New</AlertDialogTrigger>
+            <AlertDialogContent className="bg-white">
+              <AlertDialogHeader>
+                <AlertDialogTitle>Add New Corps Member</AlertDialogTitle>
+                <fieldset className='flex flex-col gap-2'>
+                  <label htmlFor="">Name</label>
+                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                </fieldset>
+                <fieldset className='flex flex-col gap-2'>
+                  <label htmlFor="">State Code</label>
+                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                </fieldset>
+                <fieldset className='flex flex-col gap-2'>
+                  <label htmlFor="">PPA</label>
+                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                </fieldset>
+                <fieldset className='flex flex-col gap-2'>
+                  <label htmlFor="">State or Origin</label>
+                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                </fieldset>
+                <fieldset className='flex flex-col gap-2'>
+                  <label htmlFor="">Phone Number</label>
+                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                </fieldset>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogAction className="text-white">Continue</AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
           </div>
       </div>
       </section>
@@ -81,8 +122,8 @@ export default function AntiCorruption() {
         <div className='flex items-center justify-between'>
           <small className='dark:text-lightGray transition-colors duration-500'>Showing 1 to 5 of 30 enteries</small>
           <div className='flex items-center gap-8'>
-            <Button variant="secondary">Previous</Button>
-            <Button>Next</Button>
+            <Button variant="secondary" className="text-white">Previous</Button>
+            <Button className="text-white">Next</Button>
           </div>
         </div>
         <div className='mx-auto'>
