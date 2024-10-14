@@ -4,9 +4,10 @@ import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
-import { Avatar } from '@mui/material'
+import { Avatar, Radio } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import useSWR from 'swr'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -17,33 +18,42 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
+import toast, {Toaster} from 'react-hot-toast'
+
+const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 export default function AntiCorruption() {
-  const [ corpers, setCorpers ] = useState([])
+  const [ corpers, setCorpers ] = useState()
   const pathname = usePathname()
 
   useEffect(() => {
-    const fetchCorpers = async () => {
-      try {
-        const res = await fetch("http://localhost:5000/corpers")
-        if (!res.ok) {
-          throw new Error('Failed to fetch corpers')
-        }
-        const data = await res.json()
-        setCorpers(data)
-        console.log(data)
-
-      } catch (error) {
-        console.error('Check your internet connection:', error)
-      }
-    }
-
-    fetchCorpers()
+    setCorpers((prevState) => ({
+      ...prevState, cds: 'anti-corruption'
+  }))
   },[])
 
+  const { data: corperData, error: corperError, isLoading: corperIsLoading } = useSWR('/api/getCorpers', fetcher)
+
+  const handleAdd = async () => {
+    const response = await fetch('/api/createCorper', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(corpers)
+  })
+  const content = await response.json()
+  console.log(content)
+  if(content.message === "Something went wrong") {
+    return toast.error("Something went wrong")
+  } else {
+     return toast.success("Corper created successfully!")
+  }
+  }
 
   return (
     <main className='flex flex-col space-y-4'>
+      <Toaster />
       <section className='flex flex-col gap-3 bg-white dark:bg-darkGray py-2 px-4 rounded-lg'>
         <div className='xl:text-2xl font-semibold capitalize text-primary dark:text-lightGray'>
           {pathname.split('/').pop()}
@@ -58,28 +68,58 @@ export default function AntiCorruption() {
                 <AlertDialogTitle>Add New Corps Member</AlertDialogTitle>
                 <fieldset className='flex flex-col gap-2'>
                   <label htmlFor="">Name</label>
-                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                  <input
+                    onChange={(e) => {
+                      setCorpers((prevState) => ({
+                            ...prevState, full_name: e.target.value
+                        }))
+                    }}
+                    type="text" className='border-[1px] p-2 rounded-md outline-none' />
                 </fieldset>
                 <fieldset className='flex flex-col gap-2'>
                   <label htmlFor="">State Code</label>
-                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                  <input
+                    onChange={(e) => {
+                      setCorpers((prevState) => ({
+                            ...prevState, state_code: e.target.value
+                        }))
+                    }}
+                    type="text" className='border-[1px] p-2 rounded-md outline-none' />
                 </fieldset>
                 <fieldset className='flex flex-col gap-2'>
                   <label htmlFor="">PPA</label>
-                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                  <input
+                    onChange={(e) => {
+                      setCorpers((prevState) => ({
+                            ...prevState, ppa: e.target.value
+                        }))
+                    }}
+                    type="text" className='border-[1px] p-2 rounded-md outline-none' />
                 </fieldset>
                 <fieldset className='flex flex-col gap-2'>
                   <label htmlFor="">State or Origin</label>
-                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                  <input
+                    onChange={(e) => {
+                        setCorpers((prevState) => ({
+                            ...prevState, state: e.target.value
+                        }))
+                    }}
+                    type="text" className='border-[1px] p-2 rounded-md outline-none' />
                 </fieldset>
                 <fieldset className='flex flex-col gap-2'>
                   <label htmlFor="">Phone Number</label>
-                  <input type="text" className='border-[1px] p-2 rounded-md outline-none' />
+                  <input
+                    onChange={(e) => {
+                      setCorpers((prevState) => ({
+                            ...prevState, phone_number: e.target.value
+                        }))
+                    }}
+                    type="text" className='border-[1px] p-2 rounded-md outline-none' />
                 </fieldset>
               </AlertDialogHeader>
               <AlertDialogFooter>
                 <AlertDialogCancel>Cancel</AlertDialogCancel>
-                <AlertDialogAction className="text-white">Continue</AlertDialogAction>
+                <AlertDialogAction className="text-white" onClick={handleAdd}>Continue</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
@@ -100,23 +140,31 @@ export default function AntiCorruption() {
             </TableRow>
           </TableHeader>
 
-          <TableBody>
-            {corpers && corpers.map((item) => (
-              <TableRow key={item.id}>
+          {corperIsLoading && <div>
+            <p>Loading...</p>
+            </div>}
+
+            {corperError && <div>
+            <p>Error Loading Pagw</p>
+            </div>}
+
+          {corperData && <TableBody>
+            {corperData.filter(data => data.cds == "anti-corruption").map((item) => (
+              <TableRow key={item.parent_id}>
                 <TableCell className='flex items-center gap-2 '>
-                  <Avatar src='' alt={item.name}/>
-                  <p className=''>{item.name}</p>
+                  <Avatar src='' alt={item.full_name}/>
+                  <p className=''>{item.full_name}</p>
                 </TableCell>
-                <TableCell>{item.code}</TableCell>
-                <TableCell><Checkbox/></TableCell>
-                <TableCell><Checkbox/></TableCell>
+                <TableCell>{item.state_code}</TableCell>
+                <TableCell className="flex items-center gap-3">Present<input type="radio" name="attend" className='w-4 h-4 accent-primary' /></TableCell>
+                <TableCell className="flex items-center gap-3">Absent<input type="radio" name="attend" className='w-4 h-4 accent-primary' /></TableCell>
                 <TableCell className='flex gap-4'>
                   <Button size="sm">View</Button>
                   <Button variant="destructive" size="sm">Delete</Button>
                 </TableCell>
               </TableRow>
             ))}
-          </TableBody>
+          </TableBody>}
         </Table>
 
         <div className='flex items-center justify-between'>
