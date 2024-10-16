@@ -8,11 +8,11 @@ import { Box} from '@mui/material';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 import { FaCalendarAlt } from "react-icons/fa";
-import { IoSettingsSharp } from "react-icons/io5";
 import { HiOutlineLogout } from "react-icons/hi";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 
 const menuLinks = [
@@ -28,7 +28,7 @@ const menuLinks = [
       { path: '/overview/agro-allied', title: 'Agro-allied', icon: <GoDotFill/>},
     ],
   },
-  { path: '/overview/settings', title: 'Settings', icon: <IoSettingsSharp /> },
+//   { path: '/overview/settings', title: 'Settings', icon: <IoSettingsSharp /> },
 
 ];
 
@@ -36,6 +36,8 @@ function Sidebar() {
     const pathname = usePathname();
     const [activePath, setActivePath] = useState('overview');
     const [expanded, setExpanded] = useState(false);
+
+    const router = useRouter()
 
     const handleNavigation = (path) => {
         setActivePath(path);
@@ -60,7 +62,7 @@ function Sidebar() {
                         <Box key={link.path}>
                             <Link href={link.path}
                                 className={`flex items-center font-semibold gap-3 p-3 text-white cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
-                                    link.path === pathname && "bg-white text-[#000]"
+                                    link.path === pathname && "bg-white text-gray-950"
                                 }`}
                                 onClick={() => {
                                     handleNavigation(link.path);
@@ -83,7 +85,7 @@ function Sidebar() {
                                         <Link href={subItem.path}
                                             key={subItem.path}
                                             className={`flex items-center gap-3 p-2  text-lg cursor-pointer text-white hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
-                                            subItem.path === pathname && "bg-white text-[#000]"
+                                            subItem.path === pathname && "bg-white text-gray-950"
                                             }`}
                                             onClick={() => handleNavigation(subItem.path)}
                                         >
@@ -96,9 +98,9 @@ function Sidebar() {
                         </Box>
                     ))}
                 </Box>
-                <div className='flex items-center font-semibold gap-3 p-3 hover:bg-hover dark:hover:bg-secondary rounded-lg cursor-pointer'>
-                    <HiOutlineLogout color='white' className='text-[17px]'/>
-                    <p className='text-white'>Logout</p>
+                <div onClick={() => router.push('/')} className='flex items-center font-semibold gap-3 p-3 text-white cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out'>
+                    <HiOutlineLogout color='' className='text-[17px]'/>
+                    <p className=''>Logout</p>
                 </div>
             </section>
         </main>

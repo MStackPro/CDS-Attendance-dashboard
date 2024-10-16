@@ -13,11 +13,11 @@ export default function Dashboard() {
   const { data: corperData, error: corperError, isLoading: corperIsLoading } = useSWR('/api/getCorpers', fetcher)
 
   return (
-    <main>
+    <main className=''>
       <section className='flex gap-6'>
-        <div className='flex flex-col gap-10 flex-[3]'>
+        <div className='flex flex-col gap-10 flex-[3] w-full'>
           <Cards corperData={corperData} corperIsLoading={corperIsLoading} corperError={corperError}/>
-          <TopAttendants/>
+          <TopAttendants corperData={corperData} corperIsLoading={corperIsLoading} corperError={corperError}/>
         </div>
         <div className='bg-white rounded-lg w-full flex-1 h-fit dark:bg-darkGray transition-colors duration-500'></div>
       </section>
