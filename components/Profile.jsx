@@ -35,7 +35,7 @@ export default function AccountMenu() {
                 </IconButton>
             </Tooltip>
             <div className="hidden xl:flex flex-col items-start leading-4">
-                <p className='dark:text-lightGray'>John Doe</p>
+                <p className='dark:text-gray-500'>Mallan Tanko</p>
                 <p className='text-primary'><strong>Admin</strong></p>
             </div>
             <Tooltip title="Account settings" className="hidden xl:block">

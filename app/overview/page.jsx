@@ -1,7 +1,7 @@
 "use client"
 
-import Cards from '@/components/Cards'
-import TopAttendants from '@/components/TopAttendants'
+import Cards from '../../components/Cards'
+import TopAttendants from '../../components/TopAttendants'
 import React from 'react'
 import useSWR from 'swr'
 

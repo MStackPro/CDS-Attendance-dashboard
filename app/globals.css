@@ -7,36 +7,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  font-family: "Montserrat" sans-serif;
-}
-@layer base {
-  body {
-    @apply bg-lightGray dark:bg-secondary
-  }
-}
-.custom-scrollbar {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-}
-.custom-scrollbar::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #EDECEC;
-  border-radius: 10px;
-}
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #0fa44a;
-  border-radius: 10px;
-  border: 2px solid white;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
