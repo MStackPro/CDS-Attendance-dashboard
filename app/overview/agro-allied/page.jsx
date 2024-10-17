@@ -17,10 +17,18 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import toast, {Toaster} from 'react-hot-toast'
+import useSWRMutation from 'swr/mutation'
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
-export default function AgroAllied() {
+async function sendRequest(url, { arg }) {
+  return fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(arg)
+  })
+}
+
+export default function AGRO() {
   const [ corpers, setCorpers ] = useState()
   const pathname = usePathname()
   const [selectedCorper, setSelectedCorper] = useState()
@@ -32,6 +40,7 @@ export default function AgroAllied() {
   },[])
 
   const { data: corperData, error: corperError, isLoading: corperIsLoading, mutate: corperMutate } = useSWR('/api/getCorpers', fetcher)
+  const { trigger } = useSWRMutation('/api/user', sendRequest)
 
   const handleAdd = async () => {
     const response = await fetch('/api/createCorper', {
@@ -50,6 +59,7 @@ export default function AgroAllied() {
      return toast.success("Corper created successfully!")
   }
   }
+
 
   return (
     <main className='flex flex-col space-y-4'>
@@ -97,7 +107,7 @@ export default function AgroAllied() {
                     type="text" className='border-[1px] p-2 rounded-md outline-none' />
                 </fieldset>
                 <fieldset className='flex flex-col gap-2'>
-                  <label htmlFor="">State or Origin</label>
+                  <label htmlFor="">State of Origin</label>
                   <input
                     onChange={(e) => {
                         setCorpers((prevState) => ({
@@ -150,7 +160,7 @@ export default function AgroAllied() {
             </div>}
 
           {corperData && <TableBody>
-            {corperData && corperData?.filter(data => data.cds == "agro").map((item) => (
+            {corperData.filter(data => data.cds == "agro").map((item) => (
               <TableRow key={item.parent_id}>
                 <TableCell className='flex items-center gap-2 '>
                   <Avatar src='' alt={item.full_name}/>
@@ -203,7 +213,7 @@ export default function AgroAllied() {
                             type="text" value={item.ppa} disabled className='border-[1px] p-2 rounded-md outline-none' />
                         </fieldset>
                         <fieldset className='flex flex-col gap-2'>
-                          <label htmlFor="">State of Origin</label>
+                          <label htmlFor="">State or Origin</label>
                           <input
                             onChange={(e) => {
                                 setCorpers((prevState) => ({
@@ -229,20 +239,46 @@ export default function AgroAllied() {
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>
-                  <Button variant="destructive" size="sm" className="hover:bg-red-500 hover:text-white border-red-500 text-red-500 dark:bg-red-300 dark:text-darkGray">Delete</Button>
+
+
+
+                  <AlertDialog>
+                    <AlertDialogTrigger className="hover:bg-red-500 hover:text-white rounded-md py-2 px-5 border-red-500 text-red-500 dark:bg-red-300 dark:text-darkGray">Delete</AlertDialogTrigger>
+                    <AlertDialogContent className="bg-white">
+                      <AlertDialogHeader>
+                        <AlertDialogTitle><span className='font-normal'>Are you sure you want to delete</span> {item.full_name}?</AlertDialogTitle>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel className="hover:bg-primary-green hover:text-white border-primary-green text-primary-green">Cancel</AlertDialogCancel>
+                        <AlertDialogAction  onClick={async () => {
+                        const response = await fetch(`/api/deleteCorper/${item.parent_id}`, {
+                          method: 'DELETE'
+                      })
+                      const content = await response.json()
+                      console.log(content)
+                      if(content.message === "Something went wrong") {
+                        return toast.error("Something went wrong")
+                      } else {
+                        corperMutate()
+                        return toast.success("Corper deleted successfully!")
+                      }
+                  }} className="text-white bg-red-500 border-red-500 border-[1px] hover:bg-white hover:text-red-500 hover:border-red-500">Delete</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>}
         </Table>
 
-        <div className='flex items-center justify-between'>
-          {/* <small className='dark:text-lightGray transition-colors duration-500'>Showing 1 to 5 of 30 enteries</small> */}
+        {/* <div className='flex items-center justify-between'>
+          <small className='dark:text-lightGray transition-colors duration-500'>Showing 1 to 5 of 30 enteries</small>
           <div className='flex items-center gap-8'>
-            <Button variant="secondary" className="text-white">Previous</Button>
-            <Button className="text-white">Next</Button>
+            <Button variant="secondary" className="text-white bg-primary-green">Previous</Button>
+            <Button className="text-white bg-primary-green">Next</Button>
           </div>
-        </div>
+        </div> */}
         <div className='mx-auto'>
           <Button onClick={() => toast.success("Attendance Submitted!")} className="text-white bg-primary-green text-lg border-[1px] hover:bg-white hover:text-primary-green hover:border-primary-green dark:bg-lightGray dark:text-darkGray">Save attendance</Button>
         </div>

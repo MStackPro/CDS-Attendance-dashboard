@@ -1,4 +1,4 @@
-import { Boxes } from "lucide-react";
+import { Boxes, Earth, LayoutDashboard, Sprout, TrafficCone } from "lucide-react";
 import React from "react";
 import { GoLaw } from "react-icons/go";
 import { RiEarthFill, RiPlantFill } from "react-icons/ri";
@@ -17,7 +17,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               <p className="group-hover:text-primary-green">Members</p>
             </div>
             <div className="bg-primary w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
-              <Boxes />
+              <LayoutDashboard />
             </div>
           </div>
           <p className="font-semibold group-hover:text-primary-green">
@@ -51,7 +51,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               <p className="group-hover:text-primary-green">Members</p>
             </div>
             <div className="bg-primary w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
-              <RiEarthFill />
+              <Earth />
             </div>
           </div>
           <p className="font-semibold group-hover:text-primary-green">
@@ -68,7 +68,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               <p className="group-hover:text-primary-green">Members</p>
             </div>
             <div className="bg-primary w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
-              <GoLaw />
+              <TrafficCone />
             </div>
           </div>
           <p className="font-semibold group-hover:text-primary-green">
@@ -85,7 +85,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               <p className="group-hover:text-primary-green">Members</p>
             </div>
             <div className="bg-primary w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
-              <RiPlantFill />
+              <Sprout />
             </div>
           </div>
           <p className="font-semibold group-hover:text-primary-green">

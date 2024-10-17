@@ -13,6 +13,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { Earth, Scale, Sprout, TrafficCone } from 'lucide-react';
 
 
 const menuLinks = [
@@ -22,10 +23,10 @@ const menuLinks = [
     title: 'Attendance',
     icon: <FaCalendarAlt />,
     nested: [
-      { path: '/overview/anti-corruption', title: 'Anti-Corruption', icon: <GoDotFill/>},
-      { path: '/overview/frsc', title: 'FRSC', icon: <GoDotFill/>},
-      { path: '/overview/sdgs', title: 'SDGs', icon: <GoDotFill/>},
-      { path: '/overview/agro-allied', title: 'Agro-allied', icon: <GoDotFill/>},
+      { path: '/overview/anti-corruption', title: 'Anti-Corruption', icon: <Scale/>},
+      { path: '/overview/frsc', title: 'FRSC', icon: <TrafficCone/>},
+      { path: '/overview/sdgs', title: 'SDGs', icon: <Earth/>},
+      { path: '/overview/agro-allied', title: 'Agro-allied', icon: <Sprout/>},
     ],
   },
 //   { path: '/overview/settings', title: 'Settings', icon: <IoSettingsSharp /> },
@@ -61,7 +62,7 @@ function Sidebar() {
                     {menuLinks.map((link) => (
                         <Box key={link.path}>
                             <Link href={link.path}
-                                className={`flex items-center font-semibold gap-3 p-3 text-white cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
+                                className={`flex items-center font-semibold gap-3 p-3 text-gray-800 cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
                                     link.path === pathname && "bg-white text-gray-950"
                                 }`}
                                 onClick={() => {
@@ -84,7 +85,7 @@ function Sidebar() {
                                     {link.nested.map((subItem) => (
                                         <Link href={subItem.path}
                                             key={subItem.path}
-                                            className={`flex items-center gap-3 p-2  text-lg cursor-pointer text-white hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
+                                            className={`flex items-center gap-3 p-2  text-lg cursor-pointer text-gray-800  hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
                                             subItem.path === pathname && "bg-white text-gray-950"
                                             }`}
                                             onClick={() => handleNavigation(subItem.path)}
@@ -98,7 +99,7 @@ function Sidebar() {
                         </Box>
                     ))}
                 </Box>
-                <div onClick={() => router.push('/')} className='flex items-center font-semibold gap-3 p-3 text-white cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out'>
+                <div onClick={() => router.push('/')} className='flex items-center font-semibold gap-3 p-3 text-gray-800 cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out'>
                     <HiOutlineLogout color='' className='text-[17px]'/>
                     <p className=''>Logout</p>
                 </div>

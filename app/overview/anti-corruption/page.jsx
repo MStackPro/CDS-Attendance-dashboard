@@ -40,7 +40,7 @@ export default function AntiCorruption() {
   },[])
 
   const { data: corperData, error: corperError, isLoading: corperIsLoading, mutate: corperMutate } = useSWR('/api/getCorpers', fetcher)
-  const { trigger } = useSWRMutation('/api/user', sendRequest)
+
 
   const handleAdd = async () => {
     const response = await fetch('/api/createCorper', {
