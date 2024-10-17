@@ -48,9 +48,9 @@ const chartConfig = {
 export function BarCds({corperData, corperError, corperIsLoading}) {
 
     const chartData = [
-        { browser: "Anti-Corruption", visitors: corperData && corperData.filter(data => data.cds == 'anti-corruption').length, fill: "#13c55a" },
-        { browser: "FRSC", visitors: corperData && corperData.filter(data => data.cds == 'frsc').length, fill: "#13c55a" },
-        { browser: "SDGs", visitors: corperData && corperData.filter(data => data.cds == 'sdgs').length, fill: "#13c55a" },
+        { browser: "Anti-Corruption", visitors: corperData && corperData.filter(data => data.cds == 'anti-corruption').length, fill: "red" },
+        { browser: "FRSC", visitors: corperData && corperData.filter(data => data.cds == 'frsc').length, fill: "yellow" },
+        { browser: "SDGs", visitors: corperData && corperData.filter(data => data.cds == 'sdgs').length, fill: "blue" },
         { browser: "Agro Allied", visitors: corperData && corperData.filter(data => data.cds == 'agro').length, fill: "#13c55a" },
       ]
 
@@ -68,9 +68,9 @@ export function BarCds({corperData, corperError, corperIsLoading}) {
     )
   }
   return (
-    corperData && <Card className="flex flex-col w-2/3 bg-gray-50">
+    corperData && <Card className="flex flex-col w-2/3 bg-gray-50 dark:bg-darkGray rounded-lg">
       <CardHeader className="items-center pb-0">
-        <CardTitle className="text-4xl">CDS Distribution</CardTitle>
+        <CardTitle className="text-4xl dark:text-white">CDS Distribution</CardTitle>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer

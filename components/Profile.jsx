@@ -21,7 +21,7 @@ export default function AccountMenu() {
   };
   return (
     <main>
-        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center', gap: "3px" }}>
             <Tooltip title="Account settings">
                 <IconButton
                     onClick={handleClick}
@@ -35,21 +35,9 @@ export default function AccountMenu() {
                 </IconButton>
             </Tooltip>
             <div className="hidden xl:flex flex-col items-start leading-4">
-                <p className='dark:text-gray-500'>Mallan Tanko</p>
-                <p className='text-primary'><strong>Admin</strong></p>
+                <p className='dark:text-lightGray'>Mallan Tanko</p>
+                <p className='text-primary-green'><strong>Admin</strong></p>
             </div>
-            <Tooltip title="Account settings" className="hidden xl:block">
-                <IconButton
-                    onClick={handleClick}
-                    size="small"
-                    sx={{ ml: 1 }}
-                    aria-controls={open ? 'account-menu' : undefined}
-                    aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}
-                >
-                    <IoIosArrowDown className='dark:text-lightGray'/>
-                </IconButton>
-            </Tooltip>
         </Box>
       <Menu
         anchorEl={anchorEl}

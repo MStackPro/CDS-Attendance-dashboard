@@ -6,7 +6,6 @@ import Logo from "/assets/nysc-seeklogo.svg"
 import { MdDashboard } from "react-icons/md";
 import { Box} from '@mui/material';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { GoDotFill } from "react-icons/go";
 import { FaCalendarAlt } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import Link from 'next/link';
@@ -49,7 +48,7 @@ function Sidebar() {
     };
 
     return (
-        <main className="text-black ">
+        <main className="">
             <div className='flex items-center mt-2 justify-center gap-2'>
                 <figure className='w-12'>
                     <Image src={Logo} alt='logo' priority/>
@@ -57,13 +56,13 @@ function Sidebar() {
                 <h2 className="text-[1.3rem] text-white font-bold leading-5">CDS <br />Attendance</h2>
             </div>
 
-            <section className='mt-8 flex flex-col justify-between h-[33rem] text-xl'>
+            <section className='mt-8 flex flex-col justify-between h-[33rem]'>
                 <Box className="flex flex-col gap-2 transition-all duration-500 ease-in-out">
                     {menuLinks.map((link) => (
                         <Box key={link.path}>
                             <Link href={link.path}
-                                className={`flex items-center font-semibold gap-3 p-3 text-gray-800 cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
-                                    link.path === pathname && "bg-white text-gray-950"
+                                className={`flex items-center font-semibold gap-3 p-3 text-white cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
+                                    link.path === pathname && "bg-white text-black dark:bg-lightGray dark:text-black"
                                 }`}
                                 onClick={() => {
                                     handleNavigation(link.path);
@@ -85,8 +84,8 @@ function Sidebar() {
                                     {link.nested.map((subItem) => (
                                         <Link href={subItem.path}
                                             key={subItem.path}
-                                            className={`flex items-center gap-3 p-2  text-lg cursor-pointer text-gray-800  hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
-                                            subItem.path === pathname && "bg-white text-gray-950"
+                                            className={`flex items-center gap-3 p-2 cursor-pointer text-white  hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out ${
+                                            subItem.path === pathname && "bg-white text-gray-950 dark:bg-lightGray dark:text-black"
                                             }`}
                                             onClick={() => handleNavigation(subItem.path)}
                                         >
@@ -99,7 +98,7 @@ function Sidebar() {
                         </Box>
                     ))}
                 </Box>
-                <div onClick={() => router.push('/')} className='flex items-center font-semibold gap-3 p-3 text-gray-800 cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out'>
+                <div onClick={() => router.push('/')} className='flex items-center font-semibold gap-3 p-3 text-white cursor-pointer hover:text-black hover:bg-white dark:hover:bg-secondary rounded-lg transition-all duration-500 ease-in-out'>
                     <HiOutlineLogout color='' className='text-[17px]'/>
                     <p className=''>Logout</p>
                 </div>

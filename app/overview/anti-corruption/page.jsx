@@ -164,9 +164,9 @@ export default function AntiCorruption() {
               <TableRow key={item.parent_id}>
                 <TableCell className='flex items-center gap-2 '>
                   <Avatar src='' alt={item.full_name}/>
-                  <p className=''>{item.full_name}</p>
+                  <p className='capitalize'>{item.full_name}</p>
                 </TableCell>
-                <TableCell>{item.state_code}</TableCell>
+                <TableCell className="uppercase">{item.state_code}</TableCell>
                 <TableCell>{item.ppa}</TableCell>
                 <TableCell className="flex items-center gap-3">
                   <div className='flex items-center gap-2'>
@@ -271,14 +271,6 @@ export default function AntiCorruption() {
             ))}
           </TableBody>}
         </Table>
-
-        {/* <div className='flex items-center justify-between'>
-          <small className='dark:text-lightGray transition-colors duration-500'>Showing 1 to 5 of 30 enteries</small>
-          <div className='flex items-center gap-8'>
-            <Button variant="secondary" className="text-white bg-primary-green">Previous</Button>
-            <Button className="text-white bg-primary-green">Next</Button>
-          </div>
-        </div> */}
         <div className='mx-auto'>
           <Button onClick={() => toast.success("Attendance Submitted!")} className="text-white bg-primary-green text-lg border-[1px] hover:bg-white hover:text-primary-green hover:border-primary-green dark:bg-lightGray dark:text-darkGray">Save attendance</Button>
         </div>

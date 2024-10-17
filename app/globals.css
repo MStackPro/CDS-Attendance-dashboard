@@ -7,3 +7,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* body {
+  background-color: #EDECEC;
+} */
+@layer base {
+  body {
+    @apply bg-lightGray dark:bg-secondary-dark
+  }
+}

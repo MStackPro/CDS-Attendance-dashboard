@@ -1,0 +1,28 @@
+{
+    "corpers": [
+        {
+            "id": 1,
+            "name": "Joel Moses",
+            "code": "KT/24A/000",
+            "image": "/assets/logo.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Basma Aliyu",
+            "code": "KT/24A/000",
+            "image": "/assets/logo.jpg"
+        },
+        {
+            "id": 3,
+            "name": "John Doe",
+            "code": "KT/24A/000",
+            "image": "/assets/logo.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Musa Musa",
+            "code": "KT/24A/000",
+            "image": "/assets/logo.jpg"
+        }
+    ]
+}

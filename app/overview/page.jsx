@@ -14,12 +14,11 @@ export default function Dashboard() {
 
   return (
     <main className=''>
-      <section className='flex gap-6'>
+      <section className='pb-4'>
         <div className='flex flex-col gap-10 flex-[3] w-full'>
           <Cards corperData={corperData} corperIsLoading={corperIsLoading} corperError={corperError}/>
           <TopAttendants corperData={corperData} corperIsLoading={corperIsLoading} corperError={corperError}/>
         </div>
-        <div className='bg-white rounded-lg w-full flex-1 h-fit dark:bg-darkGray transition-colors duration-500'></div>
       </section>
     </main>
   )
