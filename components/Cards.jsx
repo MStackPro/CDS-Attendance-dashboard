@@ -30,7 +30,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
             <div>
               {corperIsLoading && <p className="text-xl font-semibold">Loading...</p>}
               {corperError && <p className="text-xl font-semibold">Error</p>}
-              {corperData && <p className="text-3xl font-semibold">{corperData?.filter(data => data.cds == 'anti-corruption').length}</p>}
+              {corperData && <p className="text-3xl font-semibold">{corperData?.filter(data git a=> data.cds == 'anti-corruption').length}</p>}
               <p className="group-hover:text-primary-green">Members</p>
             </div>
             <div className="bg-primary w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
