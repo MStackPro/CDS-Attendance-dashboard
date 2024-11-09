@@ -132,7 +132,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/walshak/Desktop/Home/CDS/CDS-Attendance-dashboard/prisma/generated/client",
+      "value": "/home/walshak/Desktop/Home/My Projects/cds-attendance-dashboard/prisma/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -146,7 +146,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/walshak/Desktop/Home/CDS/CDS-Attendance-dashboard/prisma/schema.prisma",
+    "sourceFilePath": "/home/walshak/Desktop/Home/My Projects/cds-attendance-dashboard/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

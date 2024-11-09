@@ -14,4 +14,7 @@
   body {
     @apply bg-lightGray dark:bg-secondary-dark
   }
+  :root {
+    --radius: 0.5rem;
+  }
 }

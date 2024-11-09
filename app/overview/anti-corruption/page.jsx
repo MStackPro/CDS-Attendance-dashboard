@@ -78,7 +78,7 @@ export default function AntiCorruption() {
     <main className="flex flex-col space-y-4">
       <Toaster />
       <section className="flex items-center justify-between bg-white dark:bg-darkGray py-4 px-4 rounded-lg">
-        <div className="xl:text-2xl font-semibold capitalize text-primary dark:text-lightGray">
+        <div className="xl:text-2xl font-semibold capitalize dark:text-lightGray">
           {pathname.split("/").pop()}
         </div>
         <div className="flex items-center justify-end ">
