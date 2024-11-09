@@ -13,14 +13,14 @@ export default function Home() {
   }
   return (
     <main className="font-poppins bg-primary-green h-screen flex justify-center items-center">
-      <div className="bg-gray-50 py-10 px-6 flex flex-col items-center gap-5  rounded-md w-[500px]">
+      <div className="bg-gray-50 py-6 xl:py-10 px-6 flex flex-col items-center gap-5 rounded-md xl:w-[500px] md:w-[500px] w-[350px]">
           <div className="flex flex-col items-center gap-3">
             <Image src={logo} alt="logo" className="w-24" />
             <h1 className="text-2xl font-semibold text-center">CDS Attendance System</h1>
           </div>
           <div className="flex flex-col gap-1 items-center">
-            <h2 className="text-xl font-semibold">Login to your account</h2>
-            <p className="text-sm text-gray-600">Please enter your email and password to continue</p>
+            <h2 className="xl:text-xl md:text-xl font-semibold">Login to your account</h2>
+            <p className="text-sm text-gray-600 text-center">Please enter your email and password to continue</p>
           </div>
           <div className="flex flex-col gap-2 w-full">
             <fieldset className="flex flex-col gap-1">

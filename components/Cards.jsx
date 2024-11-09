@@ -7,8 +7,8 @@ import { GoLaw } from "react-icons/go";
 export default function Cards({corperData, corperError, corperIsLoading}) {
   return (
     <main>
-      <section className="dark:text-lightGray flex gap-8 justify-between">
-        <article className="group flex flex-col gap-4 text-white bg-primary-green dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green hover:text-primary-green transition-all duration-500 ease-in-out border-[1px] border-primary-green dark:border-secondary-dark hover:dark:bg-white ">
+      <section className="dark:text-lightGray grid xl:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-8">
+        <article className="hidden group xl:flex flex-col gap-4 text-white bg-primary-green dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green hover:text-primary-green transition-all duration-500 ease-in-out border-[1px] border-primary-green dark:border-secondary-dark hover:dark:bg-white ">
           <div className="flex items-center gap-6">
             <div>
               {corperIsLoading && <p className="text-sm font-semibold">Loading...</p>}
@@ -34,7 +34,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
           </p>
         </article>
 
-        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
+        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-4 xl:px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
           <div className="flex items-center gap-6">
             <div>
               {corperIsLoading && <p className="text-sm">Loading...</p>}
@@ -61,7 +61,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
           </p>
         </article>
 
-        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
+        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-4 xl:px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
           <div className="flex items-center gap-6">
             <div>
               {corperIsLoading && <p className="text-sm">Loading...</p>}
@@ -83,7 +83,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
           <p className="font-semibold group-hover:text-white">SDGS</p>
         </article>
 
-        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
+        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-4 xl:px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
           <div className="flex items-center gap-6">
             <div>
               {corperIsLoading && <p className="text-sm">Loading...</p>}
@@ -105,7 +105,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
           <p className="font-semibold group-hover:text-white">FRSC</p>
         </article>
 
-        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
+        <article className="group flex flex-col gap-4 bg-white dark:bg-darkGray w-fit px-4 xl:px-6 py-2 rounded-lg hover:bg-primary-green transition-all duration-500 ease-in-out">
           <div className="flex items-center gap-6">
             <div>
               {corperIsLoading && <p className="text-sm">Loading...</p>}

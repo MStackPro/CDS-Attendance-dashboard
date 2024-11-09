@@ -4,11 +4,12 @@ import { Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip
 import { useState } from "react";
 import { IoSettingsSharp } from "react-icons/io5";
 import { HiOutlineLogout } from "react-icons/hi";
-import { IoIosArrowDown } from 'react-icons/io'
+import { useRouter } from "next/navigation";
 
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
+  const router = useRouter();
 
   const open = Boolean(anchorEl);
 
@@ -87,7 +88,9 @@ export default function AccountMenu() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => {
+              router.push("/");
+            }}>
           <ListItemIcon>
             <HiOutlineLogout/>
           </ListItemIcon>
