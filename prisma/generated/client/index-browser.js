@@ -17,12 +17,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.20.0
- * Query Engine version: 06fc58a368dc7be9fbbbe894adf8d445d208c284
+ * Prisma Client JS version: 5.22.0
+ * Query Engine version: 605197351a3c8bdd595af2d2a9bc3025bca48ea2
  */
 Prisma.prismaVersion = {
-  client: "5.20.0",
-  engine: "06fc58a368dc7be9fbbbe894adf8d445d208c284"
+  client: "5.22.0",
+  engine: "605197351a3c8bdd595af2d2a9bc3025bca48ea2"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -128,10 +128,10 @@ exports.Prisma.CorperScalarFieldEnum = {
   state_code: 'state_code',
   state: 'state',
   ppa: 'ppa',
-  cds: 'cds',
   phone_number: 'phone_number',
   created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  cds: 'cds'
 };
 
 exports.Prisma.SortOrder = {

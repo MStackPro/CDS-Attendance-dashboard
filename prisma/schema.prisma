@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "./generated/client"
@@ -14,15 +8,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model Corper {
-  parent_id      String         @id @default(cuid())
-  full_name     String
-  state_code         String       @unique
-  state          String?
-  ppa            String?
-  cds             String?
-  phone_number          String?        @unique
-  created_at     DateTime       @default(now())
-  updated_at     DateTime       @updatedAt
+  parent_id    String   @id @default(cuid())
+  full_name    String
+  state_code   String   @unique
+  state        String?
+  ppa          String?
+  phone_number String?  @unique
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+  cds          String?
 }

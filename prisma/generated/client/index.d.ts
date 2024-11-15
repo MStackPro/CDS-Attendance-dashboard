@@ -210,8 +210,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.20.0
-   * Query Engine version: 06fc58a368dc7be9fbbbe894adf8d445d208c284
+   * Prisma Client JS version: 5.22.0
+   * Query Engine version: 605197351a3c8bdd595af2d2a9bc3025bca48ea2
    */
   export type PrismaVersion = {
     client: string
@@ -859,10 +859,10 @@ export namespace Prisma {
     state_code: string | null
     state: string | null
     ppa: string | null
-    cds: string | null
     phone_number: string | null
     created_at: Date | null
     updated_at: Date | null
+    cds: string | null
   }
 
   export type CorperMaxAggregateOutputType = {
@@ -871,10 +871,10 @@ export namespace Prisma {
     state_code: string | null
     state: string | null
     ppa: string | null
-    cds: string | null
     phone_number: string | null
     created_at: Date | null
     updated_at: Date | null
+    cds: string | null
   }
 
   export type CorperCountAggregateOutputType = {
@@ -883,10 +883,10 @@ export namespace Prisma {
     state_code: number
     state: number
     ppa: number
-    cds: number
     phone_number: number
     created_at: number
     updated_at: number
+    cds: number
     _all: number
   }
 
@@ -897,10 +897,10 @@ export namespace Prisma {
     state_code?: true
     state?: true
     ppa?: true
-    cds?: true
     phone_number?: true
     created_at?: true
     updated_at?: true
+    cds?: true
   }
 
   export type CorperMaxAggregateInputType = {
@@ -909,10 +909,10 @@ export namespace Prisma {
     state_code?: true
     state?: true
     ppa?: true
-    cds?: true
     phone_number?: true
     created_at?: true
     updated_at?: true
+    cds?: true
   }
 
   export type CorperCountAggregateInputType = {
@@ -921,10 +921,10 @@ export namespace Prisma {
     state_code?: true
     state?: true
     ppa?: true
-    cds?: true
     phone_number?: true
     created_at?: true
     updated_at?: true
+    cds?: true
     _all?: true
   }
 
@@ -1006,10 +1006,10 @@ export namespace Prisma {
     state_code: string
     state: string | null
     ppa: string | null
-    cds: string | null
     phone_number: string | null
     created_at: Date
     updated_at: Date
+    cds: string | null
     _count: CorperCountAggregateOutputType | null
     _min: CorperMinAggregateOutputType | null
     _max: CorperMaxAggregateOutputType | null
@@ -1035,10 +1035,10 @@ export namespace Prisma {
     state_code?: boolean
     state?: boolean
     ppa?: boolean
-    cds?: boolean
     phone_number?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cds?: boolean
   }, ExtArgs["result"]["corper"]>
 
   export type CorperSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1047,10 +1047,10 @@ export namespace Prisma {
     state_code?: boolean
     state?: boolean
     ppa?: boolean
-    cds?: boolean
     phone_number?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cds?: boolean
   }, ExtArgs["result"]["corper"]>
 
   export type CorperSelectScalar = {
@@ -1059,10 +1059,10 @@ export namespace Prisma {
     state_code?: boolean
     state?: boolean
     ppa?: boolean
-    cds?: boolean
     phone_number?: boolean
     created_at?: boolean
     updated_at?: boolean
+    cds?: boolean
   }
 
 
@@ -1075,10 +1075,10 @@ export namespace Prisma {
       state_code: string
       state: string | null
       ppa: string | null
-      cds: string | null
       phone_number: string | null
       created_at: Date
       updated_at: Date
+      cds: string | null
     }, ExtArgs["result"]["corper"]>
     composites: {}
   }
@@ -1477,10 +1477,10 @@ export namespace Prisma {
     readonly state_code: FieldRef<"Corper", 'String'>
     readonly state: FieldRef<"Corper", 'String'>
     readonly ppa: FieldRef<"Corper", 'String'>
-    readonly cds: FieldRef<"Corper", 'String'>
     readonly phone_number: FieldRef<"Corper", 'String'>
     readonly created_at: FieldRef<"Corper", 'DateTime'>
     readonly updated_at: FieldRef<"Corper", 'DateTime'>
+    readonly cds: FieldRef<"Corper", 'String'>
   }
     
 
@@ -1789,10 +1789,10 @@ export namespace Prisma {
     state_code: 'state_code',
     state: 'state',
     ppa: 'ppa',
-    cds: 'cds',
     phone_number: 'phone_number',
     created_at: 'created_at',
-    updated_at: 'updated_at'
+    updated_at: 'updated_at',
+    cds: 'cds'
   };
 
   export type CorperScalarFieldEnum = (typeof CorperScalarFieldEnum)[keyof typeof CorperScalarFieldEnum]
@@ -1881,10 +1881,10 @@ export namespace Prisma {
     state_code?: StringFilter<"Corper"> | string
     state?: StringNullableFilter<"Corper"> | string | null
     ppa?: StringNullableFilter<"Corper"> | string | null
-    cds?: StringNullableFilter<"Corper"> | string | null
     phone_number?: StringNullableFilter<"Corper"> | string | null
     created_at?: DateTimeFilter<"Corper"> | Date | string
     updated_at?: DateTimeFilter<"Corper"> | Date | string
+    cds?: StringNullableFilter<"Corper"> | string | null
   }
 
   export type CorperOrderByWithRelationInput = {
@@ -1893,10 +1893,10 @@ export namespace Prisma {
     state_code?: SortOrder
     state?: SortOrderInput | SortOrder
     ppa?: SortOrderInput | SortOrder
-    cds?: SortOrderInput | SortOrder
     phone_number?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cds?: SortOrderInput | SortOrder
   }
 
   export type CorperWhereUniqueInput = Prisma.AtLeast<{
@@ -1909,9 +1909,9 @@ export namespace Prisma {
     full_name?: StringFilter<"Corper"> | string
     state?: StringNullableFilter<"Corper"> | string | null
     ppa?: StringNullableFilter<"Corper"> | string | null
-    cds?: StringNullableFilter<"Corper"> | string | null
     created_at?: DateTimeFilter<"Corper"> | Date | string
     updated_at?: DateTimeFilter<"Corper"> | Date | string
+    cds?: StringNullableFilter<"Corper"> | string | null
   }, "parent_id" | "state_code" | "phone_number">
 
   export type CorperOrderByWithAggregationInput = {
@@ -1920,10 +1920,10 @@ export namespace Prisma {
     state_code?: SortOrder
     state?: SortOrderInput | SortOrder
     ppa?: SortOrderInput | SortOrder
-    cds?: SortOrderInput | SortOrder
     phone_number?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cds?: SortOrderInput | SortOrder
     _count?: CorperCountOrderByAggregateInput
     _max?: CorperMaxOrderByAggregateInput
     _min?: CorperMinOrderByAggregateInput
@@ -1938,10 +1938,10 @@ export namespace Prisma {
     state_code?: StringWithAggregatesFilter<"Corper"> | string
     state?: StringNullableWithAggregatesFilter<"Corper"> | string | null
     ppa?: StringNullableWithAggregatesFilter<"Corper"> | string | null
-    cds?: StringNullableWithAggregatesFilter<"Corper"> | string | null
     phone_number?: StringNullableWithAggregatesFilter<"Corper"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Corper"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Corper"> | Date | string
+    cds?: StringNullableWithAggregatesFilter<"Corper"> | string | null
   }
 
   export type CorperCreateInput = {
@@ -1950,10 +1950,10 @@ export namespace Prisma {
     state_code: string
     state?: string | null
     ppa?: string | null
-    cds?: string | null
     phone_number?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    cds?: string | null
   }
 
   export type CorperUncheckedCreateInput = {
@@ -1962,10 +1962,10 @@ export namespace Prisma {
     state_code: string
     state?: string | null
     ppa?: string | null
-    cds?: string | null
     phone_number?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    cds?: string | null
   }
 
   export type CorperUpdateInput = {
@@ -1974,10 +1974,10 @@ export namespace Prisma {
     state_code?: StringFieldUpdateOperationsInput | string
     state?: NullableStringFieldUpdateOperationsInput | string | null
     ppa?: NullableStringFieldUpdateOperationsInput | string | null
-    cds?: NullableStringFieldUpdateOperationsInput | string | null
     phone_number?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    cds?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CorperUncheckedUpdateInput = {
@@ -1986,10 +1986,10 @@ export namespace Prisma {
     state_code?: StringFieldUpdateOperationsInput | string
     state?: NullableStringFieldUpdateOperationsInput | string | null
     ppa?: NullableStringFieldUpdateOperationsInput | string | null
-    cds?: NullableStringFieldUpdateOperationsInput | string | null
     phone_number?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    cds?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CorperCreateManyInput = {
@@ -1998,10 +1998,10 @@ export namespace Prisma {
     state_code: string
     state?: string | null
     ppa?: string | null
-    cds?: string | null
     phone_number?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+    cds?: string | null
   }
 
   export type CorperUpdateManyMutationInput = {
@@ -2010,10 +2010,10 @@ export namespace Prisma {
     state_code?: StringFieldUpdateOperationsInput | string
     state?: NullableStringFieldUpdateOperationsInput | string | null
     ppa?: NullableStringFieldUpdateOperationsInput | string | null
-    cds?: NullableStringFieldUpdateOperationsInput | string | null
     phone_number?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    cds?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CorperUncheckedUpdateManyInput = {
@@ -2022,10 +2022,10 @@ export namespace Prisma {
     state_code?: StringFieldUpdateOperationsInput | string
     state?: NullableStringFieldUpdateOperationsInput | string | null
     ppa?: NullableStringFieldUpdateOperationsInput | string | null
-    cds?: NullableStringFieldUpdateOperationsInput | string | null
     phone_number?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    cds?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -2080,10 +2080,10 @@ export namespace Prisma {
     state_code?: SortOrder
     state?: SortOrder
     ppa?: SortOrder
-    cds?: SortOrder
     phone_number?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cds?: SortOrder
   }
 
   export type CorperMaxOrderByAggregateInput = {
@@ -2092,10 +2092,10 @@ export namespace Prisma {
     state_code?: SortOrder
     state?: SortOrder
     ppa?: SortOrder
-    cds?: SortOrder
     phone_number?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cds?: SortOrder
   }
 
   export type CorperMinOrderByAggregateInput = {
@@ -2104,10 +2104,10 @@ export namespace Prisma {
     state_code?: SortOrder
     state?: SortOrder
     ppa?: SortOrder
-    cds?: SortOrder
     phone_number?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
+    cds?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
