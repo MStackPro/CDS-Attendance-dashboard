@@ -9,7 +9,6 @@ import {
   TableCell,
   TableBody,
   TableContainer,
-  Paper,
 } from "@mui/material";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -25,7 +24,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import toast, { Toaster } from "react-hot-toast";
-import useSWRMutation from "swr/mutation";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
@@ -81,7 +79,6 @@ export default function AntiCorruption() {
           {pathname.split("/").pop()}
         </div>
         <div className="flex items-center justify-end ">
-          {/* <Input type="date" className=""/> */}
           <div>
           <AlertDialog>
               <AlertDialogTrigger className="bg-primary-green text-white py-2 px-5 rounded-md">
@@ -100,7 +97,7 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
@@ -113,7 +110,7 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
@@ -126,7 +123,7 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
@@ -139,7 +136,7 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
@@ -152,7 +149,7 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white  dark:border-none"
                     />
                   </fieldset>
                 </AlertDialogHeader>
@@ -267,7 +264,7 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.full_name}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
@@ -282,7 +279,7 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.state_code}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                                className="border-[1px] p-2 rounded-md uppercase outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
@@ -297,7 +294,7 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.ppa}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
@@ -312,7 +309,7 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.state}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                                className="border-[1px] p-2 rounded-md u outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
@@ -327,7 +324,7 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.phone_number}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 dark:text-white dark:border-none"
                               />
                             </fieldset>
                           </AlertDialogHeader>

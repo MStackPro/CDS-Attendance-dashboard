@@ -155,7 +155,7 @@ export function BarCds({ corperData, corperError, corperIsLoading }) {
                           <tspan
                             x={viewBox.cx}
                             y={(viewBox.cy || 0) + 24}
-                            className="fill-[muted-foreground] text-2xl"
+                            className="fill-[muted-foreground] text-2xl dark:text-white"
                           >
                             Corpers
                           </tspan>

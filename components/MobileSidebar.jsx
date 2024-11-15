@@ -60,7 +60,7 @@ export default function Sidebar() {
   return (
     <main>
       <button
-        className="text-2xl focus:outline-none"
+        className="text-2xl focus:outline-none dark:text-white"
         onClick={handleDrawerToggle}
       >
         {open ? <IoMdClose /> : <CiMenuFries />}
@@ -121,7 +121,7 @@ export default function Sidebar() {
                         <li key={subIndex}>
                           <button
                             className={`flex items-center gap-4 w-[90%] px-4 py-2 text-left ${
-                              subLink.path == pathname && "bg-lightGray rounded-lg"
+                              subLink.path == pathname && "bg-lightGray rounded-lg text-black"
                             }`}
                             onClick={() => handleLinkClick(subLink.path)}
                           >
@@ -135,7 +135,7 @@ export default function Sidebar() {
                 ) : (
                   <button
                     className={`flex items-center gap-4 w-full px-4 py-3 text-left ${
-                      link.path == pathname && "bg-lightGray rounded-lg"
+                      link.path == pathname && "bg-lightGray rounded-lg text-black"
                     }`}
                     onClick={() => handleLinkClick(link.path)}
                   >
