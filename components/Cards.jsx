@@ -8,11 +8,11 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
   return (
     <main>
       <section className="dark:text-lightGray grid xl:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-8">
-        <article className="hidden group xl:flex flex-col gap-4 text-white bg-primary-green dark:bg-darkGray w-fit px-6 py-2 rounded-lg hover:bg-primary-green hover:text-primary-green transition-all duration-500 ease-in-out border-[1px] border-primary-green dark:border-secondary-dark hover:dark:bg-white ">
+        <article className="hidden group xl:flex flex-col gap-4 text-white bg-primary-green dark:bg-primary-green w-fit px-6 py-2 rounded-lg hover:bg-primary-green hover:text-primary-green transition-all duration-500 ease-in-out border-[1px] border-primary-green dark:border-secondary-dark">
           <div className="flex items-center gap-6">
             <div>
               {corperIsLoading && <p className="text-sm font-semibold">Loading...</p>}
-              {corperError && <p className="text-3xl font-semibold">Error</p>}
+              {corperError && <p className="text-3xl font-semibold text-red-500">Error</p>}
               {corperData && (
                 <CountUp
                   end={
@@ -25,7 +25,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               )}
               <p className="group-hover:text-black">Members</p>
             </div>
-            <div className="bg-white w-fit p-2 rounded-full text-primary-green text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
+            <div className="bg-white w-fit p-2 rounded-full text-primary-green text-3xl group-hover:bg-white transition-all duration-500 ease-in-out">
               <LayoutDashboard />
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               )}
               <p className="group-hover:text-white">Members</p>
             </div>
-            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
+            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary group-hover:text-primary-green dark:group-hover:bg-white transition-all duration-500 ease-in-out">
               <GoLaw />
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               )}
               <p className="group-hover:text-white">Members</p>
             </div>
-            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
+            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary-green dark:group-hover:bg-white transition-all duration-500 ease-in-out">
               <Earth />
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               )}
               <p className="group-hover:text-white">Members</p>
             </div>
-            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
+            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary-green dark:group-hover:bg-white transition-all duration-500 ease-in-out">
               <TrafficCone />
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Cards({corperData, corperError, corperIsLoading}) {
               )}
               <p className="group-hover:text-white">Members</p>
             </div>
-            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary dark:group-hover:bg-lightGray transition-all duration-500 ease-in-out">
+            <div className="bg-primary-green w-fit p-2 rounded-full text-white text-3xl group-hover:bg-white group-hover:text-primary-green dark:group-hover:bg-white transition-all duration-500 ease-in-out">
               <Sprout />
             </div>
           </div>

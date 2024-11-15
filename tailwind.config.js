@@ -29,7 +29,7 @@ module.exports = {
     			},
     			secondary: {
     				DEFAULT: 'hsl(var(--secondary))',
-    				dark: '#2e2e3e',
+    				dark: '#121212',
     				foreground: 'hsl(var(--secondary-foreground))'
     			},
     			lightGray: {
@@ -37,7 +37,7 @@ module.exports = {
     				dark: '#2E2E2E'
     			},
     			darkGray: {
-    				DEFAULT: '#283C43',
+    				DEFAULT: '#1E1E1E',
     				dark: '#4caf50'
     			},
     			textColor: {

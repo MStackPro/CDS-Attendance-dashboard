@@ -89,12 +89,12 @@ export function BarCds({ corperData, corperError, corperIsLoading }) {
   }
   return (
     corperData && (
-      <Card className="flex flex-col w-full xl:w-2/3 bg-gray-50 dark:bg-darkGray rounded-lg">
+      <Card className="flex flex-col w-full xl:w-2/3 bg-gray-50 dark:bg-darkGray rounded-lg border dark:border-none">
         <CardHeader className="items-center pb-0">
           <CardTitle className="text-4xl dark:text-white">
             CDS Distribution
           </CardTitle>
-          <div className="flex gap-8 mt-4">
+          <div className="flex dark:text-white gap-8 mt-4">
             <div>
               <div className="flex items-center">
                 <GoDotFill color="yellow" size={25} />
@@ -148,7 +148,7 @@ export function BarCds({ corperData, corperError, corperIsLoading }) {
                           <tspan
                             x={viewBox.cx}
                             y={viewBox.cy}
-                            className="fill-foreground text-5xl font-bold"
+                            className="fill-foreground text-5xl font-bold dark:text-white"
                           >
                             {corperData && totalVisitors}
                           </tspan>

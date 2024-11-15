@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import {
   Avatar,
-  Radio,
   Table,
   TableHead,
   TableRow,
@@ -78,21 +77,20 @@ export default function AntiCorruption() {
     <main className="flex flex-col space-y-4">
       <Toaster />
       <section className="flex items-center justify-between bg-white dark:bg-darkGray py-4 px-4 rounded-lg">
-        <div className="xl:text-2xl font-semibold capitalize dark:text-lightGray">
+        <div className="xl:text-2xl font-semibold capitalize text-primary dark:text-lightGray">
           {pathname.split("/").pop()}
         </div>
         <div className="flex items-center justify-end ">
-          {/* <Input type="date" className=""/> */}
           <div>
-            <AlertDialog>
-              <AlertDialogTrigger className="bg-primary-green dark:bg-lightGray dark:text-darkGray text-white py-2 px-5 rounded-md">
+          <AlertDialog>
+              <AlertDialogTrigger className="bg-primary-green text-white py-2 px-5 rounded-md">
                 Add New
               </AlertDialogTrigger>
-              <AlertDialogContent className="bg-white w-[90%] xl:w-full rounded-xl">
+              <AlertDialogContent className="bg-white dark:bg-darkGray dark:border dark:border-none w-[90%] xl:w-full rounded-xl">
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Add New Corps Member</AlertDialogTitle>
+                  <AlertDialogTitle className="dark:text-white">Add New Corps Member</AlertDialogTitle>
                   <fieldset className="flex flex-col gap-2">
-                    <label htmlFor="" className="text-left">Name</label>
+                    <label htmlFor="" className="text-left dark:text-white">Name</label>
                     <input
                       onChange={(e) => {
                         setCorpers((prevState) => ({
@@ -101,11 +99,11 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
-                    <label htmlFor="" className="text-left">State Code</label>
+                    <label htmlFor="" className="text-left dark:text-white">State Code</label>
                     <input
                       onChange={(e) => {
                         setCorpers((prevState) => ({
@@ -114,11 +112,11 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
-                    <label htmlFor="" className="text-left">PPA</label>
+                    <label htmlFor="" className="text-left dark:text-white">PPA</label>
                     <input
                       onChange={(e) => {
                         setCorpers((prevState) => ({
@@ -127,11 +125,11 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
-                    <label htmlFor="" className="text-left">State of Origin</label>
+                    <label htmlFor="" className="text-left dark:text-white">State of Origin</label>
                     <input
                       onChange={(e) => {
                         setCorpers((prevState) => ({
@@ -140,11 +138,11 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                     />
                   </fieldset>
                   <fieldset className="flex flex-col gap-2">
-                    <label htmlFor="" className="text-left">Phone Number</label>
+                    <label htmlFor="" className="text-left dark:text-white">Phone Number</label>
                     <input
                       onChange={(e) => {
                         setCorpers((prevState) => ({
@@ -153,7 +151,7 @@ export default function AntiCorruption() {
                         }));
                       }}
                       type="text"
-                      className="border-[1px] p-2 rounded-md outline-none"
+                      className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                     />
                   </fieldset>
                 </AlertDialogHeader>
@@ -162,14 +160,14 @@ export default function AntiCorruption() {
                     Cancel
                   </AlertDialogCancel>
                   <AlertDialogAction
-                    className="text-white bg-primary-green border-[1px] hover:bg-white hover:text-primary-green hover:border-primary-green"
+                    className="text-white bg-primary-green border-[1px] hover:bg-white hover:text-primary-green hover:border-primary-green dark:border-none"
                     onClick={handleAdd}
                   >
                     Continue
                   </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
-            </AlertDialog>
+          </AlertDialog>
           </div>
         </div>
       </section>
@@ -180,11 +178,11 @@ export default function AntiCorruption() {
         <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
           <TableHead>
             <TableRow className="grid grid-cols-5">
-              <TableCell align="left">Name</TableCell>
-              <TableCell align="left">State code</TableCell>
-              <TableCell align="left">PPA</TableCell>
-              <TableCell align="left">Attendance</TableCell>
-              <TableCell align="left" className="pl-12">
+              <TableCell align="left" className="dark:text-white font-semibold">Name</TableCell>
+              <TableCell align="left" className="dark:text-white font-semibold">State code</TableCell>
+              <TableCell align="left" className="dark:text-white font-semibold">PPA</TableCell>
+              <TableCell align="left" className="dark:text-white font-semibold">Attendance</TableCell>
+              <TableCell align="left" className="pl-12 dark:text-white font-semibold">
                 Action
               </TableCell>
             </TableRow>
@@ -215,17 +213,17 @@ export default function AntiCorruption() {
                       scope="row"
                     >
                       <Avatar src="" alt={item.full_name} />
-                      <p className="capitalize text-[13px]">
+                      <p className="capitalize text-[13px] dark:text-white">
                         {item.full_name.slice(0, 10)}...
                       </p>
                     </TableCell>
-                    <TableCell align="left" className="uppercase text-[13px]">
+                    <TableCell align="left" className="uppercase text-[13px] dark:text-white">
                       {item.state_code}
                     </TableCell>
-                    <TableCell align="left" className="uppercase text-[13px]">
+                    <TableCell align="left" className="uppercase text-[13px] dark:text-white">
                       {item.ppa.slice(0, 10)}...
                     </TableCell>
-                    <TableCell align="left" className="flex items-center gap-3">
+                    <TableCell align="left" className="flex items-center gap-3 dark:text-white">
                       <div className="flex items-center gap-2 text-[13px]">
                         Present
                         <input
@@ -246,18 +244,18 @@ export default function AntiCorruption() {
                     <TableCell align="left" className="flex gap-4 pl-12">
                     <AlertDialog>
                         <AlertDialogTrigger
-                          className="bg-primary-green text-white py-2 px-5 rounded-md dark:bg-lightGray dark:text-darkGray"
+                          className="bg-primary-green text-white py-2 px-5 rounded-md"
                           onClick={() => setSelectedCorper(item.parent_id)}
                         >
                           View
                         </AlertDialogTrigger>
-                        <AlertDialogContent className="bg-white w-[90%] xl:w-full rounded-xl">
+                        <AlertDialogContent className="bg-white w-[90%] xl:w-full rounded-xl dark:bg-darkGray dark:border dark:border-none">
                           <AlertDialogHeader>
-                            <AlertDialogTitle>
+                            <AlertDialogTitle className="dark:text-white">
                               {item.full_name}
                             </AlertDialogTitle>
                             <fieldset className="flex flex-col gap-2">
-                              <label htmlFor="" className="text-left">Name</label>
+                              <label htmlFor="" className="text-left dark:text-white">Name</label>
                               <input
                                 onChange={(e) => {
                                   setCorpers((prevState) => ({
@@ -268,11 +266,11 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.full_name}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
-                              <label htmlFor="" className="text-left">State Code</label>
+                              <label htmlFor="" className="text-left dark:text-white">State Code</label>
                               <input
                                 onChange={(e) => {
                                   setCorpers((prevState) => ({
@@ -283,11 +281,11 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.state_code}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
-                              <label htmlFor="" className="text-left">PPA</label>
+                              <label htmlFor="" className="text-left dark:text-white">PPA</label>
                               <input
                                 onChange={(e) => {
                                   setCorpers((prevState) => ({
@@ -298,11 +296,11 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.ppa}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
-                              <label htmlFor="" className="text-left">State or Origin</label>
+                              <label htmlFor="" className="text-left dark:text-white">State or Origin</label>
                               <input
                                 onChange={(e) => {
                                   setCorpers((prevState) => ({
@@ -313,11 +311,11 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.state}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                               />
                             </fieldset>
                             <fieldset className="flex flex-col gap-2">
-                              <label htmlFor="" className="text-left">Phone Number</label>
+                              <label htmlFor="" className="text-left dark:text-white">Phone Number</label>
                               <input
                                 onChange={(e) => {
                                   setCorpers((prevState) => ({
@@ -328,7 +326,7 @@ export default function AntiCorruption() {
                                 type="text"
                                 value={item.phone_number}
                                 disabled
-                                className="border-[1px] p-2 rounded-md outline-none"
+                                className="border-[1px] p-2 rounded-md outline-none dark:bg-lightGray/10 text-white dark:border-none"
                               />
                             </fieldset>
                           </AlertDialogHeader>
@@ -336,7 +334,7 @@ export default function AntiCorruption() {
                             <AlertDialogCancel className="hover:bg-red-500 hover:text-white border-red-500 text-red-500">
                               Close
                             </AlertDialogCancel>
-                            <AlertDialogAction className="text-white bg-primary-green border-[1px] hover:bg-white hover:text-primary-green hover:border-primary-green">
+                            <AlertDialogAction className="text-white bg-primary-green border-[1px] hover:bg-white dark:border-none hover:text-primary-green hover:border-primary-green">
                               Edit
                             </AlertDialogAction>
                           </AlertDialogFooter>
@@ -347,9 +345,9 @@ export default function AntiCorruption() {
                         <AlertDialogTrigger className="hover:bg-red-500 hover:text-white rounded-md py-2 px-5 border-red-500 text-red-500 dark:bg-red-300 dark:text-darkGray">
                           Delete
                         </AlertDialogTrigger>
-                        <AlertDialogContent className="bg-white w-[90%] xl:w-full rounded-xl">
+                        <AlertDialogContent className="bg-white w-[90%] xl:w-full rounded-xl dark:bg-darkGray dark:border dark:border-none">
                           <AlertDialogHeader>
-                            <AlertDialogTitle>
+                            <AlertDialogTitle className="dark:text-white">
                               <span className="font-normal">
                                 Are you sure you want to delete
                               </span>{" "}
@@ -398,7 +396,7 @@ export default function AntiCorruption() {
       <div className="mx-auto pb-4">
         <Button
           onClick={() => toast.success("Attendance Submitted!")}
-          className="text-white bg-primary-green text-lg border-[1px] hover:bg-white hover:text-primary-green hover:border-primary-green dark:bg-lightGray dark:text-darkGray"
+          className="text-white bg-primary-green text-lg border-[1px] hover:bg-primary-green/60 hover:text-primary-green dark:hover:text-white dark:border-none"
         >
           Save attendance
         </Button>
