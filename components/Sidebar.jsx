@@ -61,7 +61,7 @@ function Sidebar() {
                         <Box key={link.path}>
                             <Link href={link.path}
                                 className={`flex items-center font-semibold gap-3 p-3 dark:text-white cursor-pointer hover:bg-lightGray/60 dark:hover:bg-lightGray/60 rounded-lg transition-all duration-500 ease-in-out ${
-                                    link.path === pathname && "bg-white dark:bg-lightGray dark:text-black/90"
+                                    link.path === pathname && "bg-white dark:bg-lightGray dark:text-black/100"
                                 }`}
                                 onClick={() => {
                                     handleNavigation(link.path);
@@ -84,7 +84,7 @@ function Sidebar() {
                                         <Link href={subItem.path}
                                             key={subItem.path}
                                             className={`flex items-center gap-3 p-2 hover:bg-lightGray/60 cursor-pointer dark:text-white hover:bg-white dark:hover:bg-lightGray/60 rounded-lg transition-all duration-500 ease-in-out ${
-                                            subItem.path === pathname && "bg-white dark:bg-lightGray dark:text-black/90"
+                                            subItem.path === pathname && "bg-white dark:bg-lightGray dark:text-black/100"
                                             }`}
                                             onClick={() => handleNavigation(subItem.path)}
                                         >
